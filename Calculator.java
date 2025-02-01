@@ -5,6 +5,8 @@
  * 		Converting strings to integers,
  * 		operations on arrays
  * Description: Create a calculator
+ * To do: prevent multiple consecutive
+ * operators from being typed
  */
 
 
@@ -12,7 +14,6 @@ public class Calculator {
 	
 	public static void main(String[] args) {
 		
-		// System.out.printf("%.10f", 23.37/23.37);
 		new CalculatorFrame();
 		
 	}
