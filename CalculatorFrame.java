@@ -5,23 +5,12 @@
  * Description: Creates the frame for the calculator
  */
 
-/* 
- * 	NOTE:
- * 
- * This calculator cannot divide multiple times in a row, due to
- * inaccuracies with scientific notation
- * it also assumes division by zero is Infinity
- * 
- * This is a very incredibly inefficient program
- * supports operations with bedmas
- * 
- */
-
 // import all the packages
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.*;
+import java.lang.Math;
 
 // create the class which extends (uses) JFrame
 public class CalculatorFrame extends JFrame{
@@ -66,7 +55,7 @@ public class CalculatorFrame extends JFrame{
 		double second_num = Double.valueOf(expr);
 
 		// check which operation is to be performed, then return the result
-		if ((char)operation == '^'){return Math.pow(first_num, (double)second_num);}
+		if ((char)operation == '^'){return Math.pow((double)first_num, (double)second_num);}
 		if ((char)operation == '÷'){return first_num / (double)second_num;}
 		if ((char)operation == '*'){return first_num * second_num;}
 		if ((char)operation == '+'){return first_num + second_num;}
@@ -162,7 +151,7 @@ public class CalculatorFrame extends JFrame{
 				prev_number_end = i + 1;
 			}
 			i++;
-		}	
+		}
 		// finally we return the simplified expression
 		return expression;
 	}	
